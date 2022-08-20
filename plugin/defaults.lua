@@ -1,0 +1,17 @@
+vim.opt.modelines = 0
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.visualbell = true
+vim.opt.directory = '/Users/lightles/.config/nvim/swapfiles'
+vim.opt.modelines = 0
+vim.opt.encoding = 'utf-8'
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.timeout = true
+vim.opt.timeoutlen = 500
+vim.opt.foldmethod = 'syntax'
+vim.opt.cmdheight = 2
