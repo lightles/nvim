@@ -1,10 +1,10 @@
 
 local wk = require("which-key")
 ---- Windows
-nmap('n', '<C-h>', '<C-w>h')
-nmap('n', '<C-j>', '<C-w>j')
-nmap('n', '<C-k>', '<C-w>k')
-nmap('n', '<C-l>', '<C-w>l')
+nmap('<C-h>', '<C-w>h')
+nmap('<C-j>', '<C-w>j')
+nmap('<C-k>', '<C-w>k')
+nmap('<C-l>', '<C-w>l')
 
 -- remove search highlight
 -- nmap('n', '<C-_>', ':let@/=""<CR>')
