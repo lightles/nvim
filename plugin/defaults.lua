@@ -15,3 +15,4 @@ vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 vim.opt.foldmethod = 'syntax'
 vim.opt.cmdheight = 2
+vim.api.nvim_exec([[ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro ]], false)

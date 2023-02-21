@@ -1,6 +1,7 @@
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.ansiblels.setup{}
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Functional wrapper for mapping custom keybindings
 function map(mode, shortcut, command)
@@ -25,5 +26,4 @@ vim.api.nvim_command('command W w')
 vim.api.nvim_command('command Q q')
 
 vim.g.gitgutter_map_keys = 0
-vim.api.nvim_command('autocmd BufNewFile,BufRead *.yaml,*.yml :set filetype=yaml.ansible')
 

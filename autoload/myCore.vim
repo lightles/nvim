@@ -23,15 +23,6 @@ function! myCore#ToggleLineNumbers()
     IndentLinesToggle
 endfunction
 
-function! myCore#WriteAndDeleteTrailingWhitespace()
-    :let _s=@/|:%s/\s\+$//e|:let @/=_s|:write
-endfunction
-
-function! myCore#RunAndPreviewPlantUML()
-    execute "silent !java -jar $HOME/.config/nvim/bin/plantuml.jar -tsvg " . expand('%:p')
-	execute "silent !open -a ". g:default_preview_browser . " " . expand('%:p:r') . ".svg"
-endfunction
-
 function! myCore#AddATODOAboveLine()
     call append(line(".")-1, "TODO ")
     execute "normal k"

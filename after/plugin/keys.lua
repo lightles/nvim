@@ -7,8 +7,23 @@ nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
 
 -- remove search highlight
--- nmap('n', '<C-_>', ':let@/=""<CR>')
+nmap('<C-_>', ':let@/=""<CR>')
 
+-- chatGPT
+wk.register({
+    g = {
+        name = "+AIChatGPT",
+        g = {"<cmd>ChatGPT<CR>", "Chat"},
+        p = {"<cmd>ChatGPTActAs<CR>", "Prompt"},
+    },
+}, { prefix = "<leader>" })
+
+wk.register({
+    g = {
+        name = "+AIChatGPT-Selection",
+        g = {"<cmd>ChatGPTEditWithInstructions<CR>", "Chat"},
+    },
+}, { prefix = "<leader>", mode = "v" })
 
 -- Buffers
 wk.register({
@@ -94,16 +109,16 @@ wk.register({
 
 -- Git
 wk.register({
-  g = {
+  G = {
     name = "+Git",
-    n = { "<cmd>GitGutterNextHunk(<CR>", "next-hunk" },
-    p = { "<cmd>GitGutterPrevHunk(<CR>", "previous-hunk" },
+    n = { "<cmd>GitGutterNextHunk<CR>", "next-hunk" },
+    p = { "<cmd>GitGutterPrevHunk<CR>", "previous-hunk" },
+    d = { "<cmd>Gdiffsplit<cr>", "diff" },
   },
 }, { prefix = "<leader>" })
 
-
--- " GOYO
--- map('n', '<leader>1', ':Goyo<CR>')
--- nmap <leader>1 :Goyo<CR>
--- let g:which_key_map_normal_leader.1 =  'Goyo'
--- 
+-- Help
+wk.register({
+  h = { "<cmd>Help<CR>", "Help" ,
+  },
+}, { prefix = "<leader>" })
