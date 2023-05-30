@@ -6,29 +6,20 @@ if fn.empty(fn.glob(install_path)) > 0 then
  vim.cmd [[packadd packer.nvim]]
 end
 return require('packer').startup(function(use)
-    use({
-        "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup({
-        -- optional configuration
-      })
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-        }
-    })
     -- plugin manager
     use 'wbthomason/packer.nvim'
     -- theme
     use 'liuchengxu/space-vim-theme'
     use 'itchyny/lightline.vim'
+    -- give me workspaces
+    use 'natecraddock/workspaces.nvim'
     -- show me my keybinds
     use 'folke/which-key.nvim'
     -- give me good search
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
     -- file tree only for peer 
     use 'scrooloose/nerdtree'
     -- comments

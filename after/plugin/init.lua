@@ -1,5 +1,20 @@
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.ansiblels.setup{}
+require'lspconfig'.robotframework_ls.setup{
+    settings = {
+    robot}
+}
+require("workspaces").setup({
+    hooks = {
+        open = { "Telescope find_files" },
+    }
+})
+require("telescope").setup({
+  extensions = {
+    workspaces = {}
+  }
+})
+vim.api.nvim_command('autocmd BufNewFile,BufRead *.robot setfiletype robot')
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 

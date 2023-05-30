@@ -9,27 +9,20 @@ nmap('<C-l>', '<C-w>l')
 -- remove search highlight
 nmap('<C-_>', ':let@/=""<CR>')
 
--- chatGPT
+
+-- Workspaces
 wk.register({
-    g = {
-        name = "+AIChatGPT",
-        g = {"<cmd>ChatGPT<CR>", "Chat"},
-        p = {"<cmd>ChatGPTActAs<CR>", "Prompt"},
-    },
+  e = {
+    name = "+Workspaces",
+    A = { "<cmd>WorkspacesAdd<CR>", "Add Workspace" },
+    o = { "<cmd>WorkspacesOpen<CR>", "Open Workspace" },
+  },
 }, { prefix = "<leader>" })
-
-wk.register({
-    g = {
-        name = "+AIChatGPT-Selection",
-        g = {"<cmd>ChatGPTEditWithInstructions<CR>", "Chat"},
-    },
-}, { prefix = "<leader>", mode = "v" })
-
 -- Buffers
 wk.register({
   b = {
     name = "+Buffer",
-    b = { "<cmd>Buffers<CR>", "Buffers" },
+    b = { "<cmd>Telescope buffers<CR>", "Buffers" },
     d = { "<cmd>bd<CR>", "delete" },
     n = { "<cmd>bn<CR>", "next" },
     p = { "<cmd>bp<CR>", "previous" },
@@ -83,6 +76,7 @@ wk.register({
     i = { "<cmd>set paste!<CR>", "paste-mode" },
     l = { "<cmd>call myCore#ToggleLineNumbers()<CR>", "line-numbers" },
     g = { "<cmd>GitGutterToggle<CR>", "git-gutter" },
+    c = { "<cmd>set scrollbind<CR>", "scroll-bind" },
   },
 }, { prefix = "<leader>" })
 
@@ -91,10 +85,10 @@ wk.register({
   f = {
     name = "+Files",
     t = { "<cmd>NERDTreeToggle<CR>", "file-tree" },
-    f = { "<cmd>Files<CR>", "find" },
-    g = { "<cmd>GFiles<CR>", "git-find" },
-    s = { "<cmd>Files ~/<CR>", "find-all" },
-    F = { "<cmd>call myCore#SshEdit()<CR>", "find-remote" },
+    f = { "<cmd>Telescope find_files<CR>", "find-files" },
+    g = { "<cmd>Telescope git_files<CR>", "find-git-files" },
+    --s = { "<cmd>Files ~/<CR>", "find-all" },
+    --F = { "<cmd>call myCore#SshEdit()<CR>", "find-remote" },
   },
 }, { prefix = "<leader>" })
 
@@ -109,8 +103,17 @@ wk.register({
 
 -- Git
 wk.register({
-  G = {
+  g = {
     name = "+Git",
+    f = {
+        name = "+Find",
+        f = { "<cmd>Telescope git_files<CR>", "files" },
+        c = { "<cmd>Telescope git_commits<CR>", "commits" },
+        b = { "<cmd>Telescope git_branches<CR>", "branches" },
+        S = { "<cmd>Telescope git_stash<CR>", "stash" },
+
+    },
+    s = { "<cmd>Telescope git_status<CR>", "status" },
     n = { "<cmd>GitGutterNextHunk<CR>", "next-hunk" },
     p = { "<cmd>GitGutterPrevHunk<CR>", "previous-hunk" },
     d = { "<cmd>Gdiffsplit<cr>", "diff" },
