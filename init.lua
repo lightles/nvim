@@ -32,9 +32,13 @@ return require('packer').startup(function(use)
     use 'Yggdroot/indentLine'
     -- LSP!!
     use 'neovim/nvim-lspconfig'
-    use 'pearofducks/ansible-vim'
+    -- tree sitter
+    use 'nvim-treesitter/nvim-treesitter'
     -- better fFtT so i can use my ; and ,
     use 'rhysd/clever-f.vim'
+
+    -- syntax
+    use 'Glench/Vim-Jinja2-Syntax'
 
     if packer_bootstrap then
         require('packer').sync()

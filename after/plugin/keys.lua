@@ -15,9 +15,11 @@ wk.register({
   e = {
     name = "+Workspaces",
     A = { "<cmd>WorkspacesAdd<CR>", "Add Workspace" },
-    o = { "<cmd>WorkspacesOpen<CR>", "Open Workspace" },
+    D = { "<cmd>WorkspacesRemove<CR>", "Delete Workspace" },
+    o = { "<cmd>Telescope workspaces<CR>", "Open Workspace" },
   },
 }, { prefix = "<leader>" })
+
 -- Buffers
 wk.register({
   b = {
@@ -87,7 +89,6 @@ wk.register({
     t = { "<cmd>NERDTreeToggle<CR>", "file-tree" },
     f = { "<cmd>Telescope find_files<CR>", "find-files" },
     g = { "<cmd>Telescope git_files<CR>", "find-git-files" },
-    --s = { "<cmd>Files ~/<CR>", "find-all" },
     --F = { "<cmd>call myCore#SshEdit()<CR>", "find-remote" },
   },
 }, { prefix = "<leader>" })

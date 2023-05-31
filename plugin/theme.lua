@@ -9,3 +9,7 @@ vim.cmd "hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse
 --vim.cmd "hi yamlPlainScalar ctermfg=204"
 vim.cmd "hi yamlFlowString ctermfg=136"
 vim.cmd "hi yamlInteger ctermfg=222"
+
+vim.cmd "hi TelescopeBorder ctermfg=100"
+vim.cmd "hi TelescopeNormal ctermbg=234"
+--vim.api.nvim_set_hl(0, "TelescopeBorder", {ctermfg=100})
