@@ -1,10 +1,11 @@
 
 local wk = require("which-key")
----- Windows
+---- EZ Windows
 nmap('<C-h>', '<C-w>h')
 nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
+nmap('<cr>', 'ciw')
 
 -- remove search highlight
 nmap('<C-_>', ':let@/=""<CR>')
@@ -17,6 +18,14 @@ wk.register({
     A = { "<cmd>WorkspacesAdd<CR>", "Add Workspace" },
     D = { "<cmd>WorkspacesRemove<CR>", "Delete Workspace" },
     o = { "<cmd>Telescope workspaces<CR>", "Open Workspace" },
+  },
+}, { prefix = "<leader>" })
+
+-- Search
+wk.register({
+  s = {
+    name = "+Search",
+    g = { "<cmd>Telescope live_grep<CR>", "grep" },
   },
 }, { prefix = "<leader>" })
 
@@ -35,14 +44,26 @@ wk.register({
 ---- Comments
 wk.register({
   c  = { "<Plug>NERDCommenterToggle", "comment" },
-  Cy = { "<Plug>NERDCommenterYank", "Yank&comment"},
 }, { prefix = "<leader>" })
 
 wk.register({
   c  = { "<Plug>NERDCommenterToggle", "comment" },
-  Cy = { "<Plug>NERDCommenterYank", "Yank&comment"},
 }, { prefix = "<leader>", mode = "v" })
- 
+
+wk.register({
+  C = {
+    name = "+Comment",
+    y = { "<Plug>NERDCommenterYank", "Yank&comment"},
+  },
+}, { prefix = "<leader>" })
+
+wk.register({
+  C = {
+    name = "+Comment",
+    y = { "<Plug>NERDCommenterYank", "Yank&comment"},
+  },
+}, { prefix = "<leader>", mode = "v" })
+
 -- Windows
 wk.register({
   w = {
@@ -50,6 +71,7 @@ wk.register({
     s = { "<cmd>split<CR>", "hSplit" },
     v = { "<cmd>vsplit<CR>", "vSplit" },
     d = { "<cmd>q<CR>", "close" },
+    q = { "<cmd>q<CR>", "close" },
     h = { "<C-w>h", "left" },
     j = { "<C-w>j", "down" },
     k = { "<C-w>k", "up" },
@@ -123,6 +145,5 @@ wk.register({
 
 -- Help
 wk.register({
-  h = { "<cmd>Help<CR>", "Help" ,
-  },
+  h = { "<cmd>Help<CR>", "Help"},
 }, { prefix = "<leader>" })
