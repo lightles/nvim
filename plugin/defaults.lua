@@ -1,9 +1,8 @@
-vim.opt.modelines = 0
+vim.opt.modelines = 1
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.visualbell = true
 vim.opt.directory = '/Users/lightles/.config/nvim/swapfiles'
-vim.opt.modelines = 0
 vim.opt.encoding = 'utf-8'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -14,5 +13,4 @@ vim.opt.smartcase = true
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 vim.opt.foldmethod = 'syntax'
-vim.opt.cmdheight = 2
 vim.api.nvim_exec([[ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro ]], false)

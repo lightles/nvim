@@ -11,6 +11,12 @@ require("workspaces").setup({
     }
 })
 require('telescope').load_extension('workspaces')
+require("mason").setup()
+require("mason-lspconfig").setup()
+require('lualine').setup {
+  options = { theme = 'gruvbox' }
+}
+require('nvim-web-devicons').setup()
 
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.robot set filetype=robot')
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.yaml set filetype=yaml.ansible')
@@ -49,4 +55,3 @@ vim.g.gitgutter_map_keys = 0
 --vim.g.vim_json_conceal = 0
 --vim.g.indentLine_setConceal = 0
 require("lspconfig")
-

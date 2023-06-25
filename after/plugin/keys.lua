@@ -26,6 +26,7 @@ wk.register({
   s = {
     name = "+Search",
     g = { "<cmd>Telescope live_grep<CR>", "grep" },
+    t = { "<cmd>Telescope<CR>", "ALL" },
   },
 }, { prefix = "<leader>" })
 

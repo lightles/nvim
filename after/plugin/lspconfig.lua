@@ -65,3 +65,6 @@ require('lspconfig')['pyright'].setup {
 require('lspconfig')['robotframework_ls'].setup {
   capabilities = capabilities
 }
+require("mason-lspconfig").setup {
+    ensure_installed = { 'ansiblels', 'pyright', 'robotframework_ls' },
+}

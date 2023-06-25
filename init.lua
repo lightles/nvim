@@ -9,8 +9,9 @@ return require('packer').startup(function(use)
     -- plugin manager
     use 'wbthomason/packer.nvim'
     -- theme
-    use 'liuchengxu/space-vim-theme'
-    use 'itchyny/lightline.vim'
+    use 'nvim-tree/nvim-web-devicons'
+    use 'nvim-lualine/lualine.nvim'
+    use 'ellisonleao/gruvbox.nvim'
     -- give me workspaces
     use 'natecraddock/workspaces.nvim'
     -- show me my keybinds
@@ -39,6 +40,8 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
 
     -- better fFtT so i can use my ; and ,
     use 'rhysd/clever-f.vim'
