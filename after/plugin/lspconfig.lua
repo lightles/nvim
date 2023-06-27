@@ -1,3 +1,20 @@
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.ansiblels.setup{}
+require'lspconfig'.lua_ls.setup{
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
+require'lspconfig'.robotframework_ls.setup{
+    settings = {
+        robot
+    }
+}
+require("lspconfig")
 -- Set up nvim-cmp.
 local cmp = require'cmp'
 
@@ -66,5 +83,5 @@ require('lspconfig')['robotframework_ls'].setup {
   capabilities = capabilities
 }
 require("mason-lspconfig").setup {
-    ensure_installed = { 'ansiblels', 'pyright', 'robotframework_ls' },
+    ensure_installed = { 'ansiblels', 'pyright', 'robotframework_ls', 'lua_ls' },
 }

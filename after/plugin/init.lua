@@ -1,22 +1,27 @@
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.ansiblels.setup{}
-require'lspconfig'.robotframework_ls.setup{
-    settings = {
-        robot
-    }
-}
-require("workspaces").setup({
+require('nvim-web-devicons').setup()
+require('workspaces').setup({
     hooks = {
         open = { "Telescope find_files" },
     }
 })
-require('telescope').load_extension('workspaces')
-require("mason").setup()
-require("mason-lspconfig").setup()
+local custom_gruvbox = require'lualine.themes.gruvbox'
+custom_gruvbox.insert.a.bg = '#ffaf00'
 require('lualine').setup {
-  options = { theme = 'gruvbox' }
+  options = { theme  = custom_gruvbox },
+  --options = { theme = 'gruvbox' },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_c = {},
+    lualine_b = {'branch', 'diff', 'diagnostics', 'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'},
+  },
 }
-require('nvim-web-devicons').setup()
+require('trouble').setup()
+require('mason').setup()
+require('mason-lspconfig').setup()
+require('telescope').load_extension('workspaces')
 
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.robot set filetype=robot')
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.yaml set filetype=yaml.ansible')
@@ -52,6 +57,4 @@ vim.api.nvim_command('command Q q')
 
 vim.g.gitgutter_map_keys = 0
 
---vim.g.vim_json_conceal = 0
---vim.g.indentLine_setConceal = 0
-require("lspconfig")
+vim.g.indentLine_conceallevel = 0

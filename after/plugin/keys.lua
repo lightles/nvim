@@ -1,5 +1,5 @@
-
 local wk = require("which-key")
+
 ---- EZ Windows
 nmap('<C-h>', '<C-w>h')
 nmap('<C-j>', '<C-w>j')
@@ -9,8 +9,6 @@ nmap('<cr>', 'ciw')
 
 -- remove search highlight
 nmap('<C-_>', ':let@/=""<CR>')
-
-
 -- Workspaces
 wk.register({
   e = {
@@ -120,15 +118,21 @@ wk.register({
 wk.register({
   q = {
     name = "+System",
+    q = { "<cmd>qall<CR>", "quit" },
+    Q = { "<cmd>qall!<CR>", "force-quit" },
+    w = { "<cmd>w<CR>", "write" },
+    W = { "<cmd>wall<CR>", "write-all-quit" },
     c = { "<cmd>checkhealth<CR>", "neovim-health" },
     u = { "<cmd>call myCore#UpdatePlugins()<CR>", "update" },
   },
 }, { prefix = "<leader>" })
 
 -- Git
+-- :bufdo :e
 wk.register({
   g = {
     name = "+Git",
+    g = { "<cmd>bufdo :e<CR>", "reload-files" },
     f = {
         name = "+Find",
         f = { "<cmd>Telescope git_files<CR>", "files" },
@@ -148,3 +152,10 @@ wk.register({
 wk.register({
   h = { "<cmd>Help<CR>", "Help"},
 }, { prefix = "<leader>" })
+
+-- global local leader keys
+wk.register({
+    a = { "<cmd>SymbolsOutline<CR>", "Symbols"},
+    t = { "<cmd>TroubleToggle<CR>", "Trouble" },
+}, { prefix = "<localleader>" })
+

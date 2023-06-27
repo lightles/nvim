@@ -1,3 +1,4 @@
+vim.opt.showmode = false
 vim.opt.modelines = 1
 vim.opt.relativenumber = true
 vim.opt.number = true
