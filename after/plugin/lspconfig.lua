@@ -1,5 +1,7 @@
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.ansiblels.setup{}
+require'lspconfig'.marksman.setup{}
+require'lspconfig'.bashls.setup{}
 require'lspconfig'.lua_ls.setup{
     settings = {
         Lua = {
@@ -83,5 +85,5 @@ require('lspconfig')['robotframework_ls'].setup {
   capabilities = capabilities
 }
 require("mason-lspconfig").setup {
-    ensure_installed = { 'ansiblels', 'pyright', 'robotframework_ls', 'lua_ls' },
+    ensure_installed = { 'ansiblels', 'pyright', 'robotframework_ls', 'lua_ls', 'marksman', 'bashls' },
 }
