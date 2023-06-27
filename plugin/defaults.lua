@@ -14,4 +14,5 @@ vim.opt.smartcase = true
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 vim.opt.foldmethod = 'syntax'
+vim.o.completeopt = 'menuone,noselect'
 vim.api.nvim_exec([[ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro ]], false)

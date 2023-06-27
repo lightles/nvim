@@ -8,7 +8,6 @@ local custom_gruvbox = require'lualine.themes.gruvbox'
 custom_gruvbox.insert.a.bg = '#ffaf00'
 require('lualine').setup {
   options = { theme  = custom_gruvbox },
-  --options = { theme = 'gruvbox' },
   sections = {
     lualine_a = {'mode'},
     lualine_c = {},
@@ -19,8 +18,6 @@ require('lualine').setup {
   },
 }
 require('trouble').setup()
-require('mason').setup()
-require('mason-lspconfig').setup()
 require('telescope').load_extension('workspaces')
 
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.robot set filetype=robot')
