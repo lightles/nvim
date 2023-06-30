@@ -9,6 +9,9 @@ nmap('<cr>', 'ciw')
 
 -- remove search highlight
 nmap('<C-_>', ':let@/=""<CR>')
+
+-- format
+nmap('=', ':lua vim.lsp.buf.format()<CR>')
 -- Workspaces
 wk.register({
   e = {
@@ -42,24 +45,24 @@ wk.register({
 
 ---- Comments
 wk.register({
-  c  = { "<Plug>NERDCommenterToggle", "comment" },
+  c = { "<Plug>NERDCommenterToggle", "comment" },
 }, { prefix = "<leader>" })
 
 wk.register({
-  c  = { "<Plug>NERDCommenterToggle", "comment" },
+  c = { "<Plug>NERDCommenterToggle", "comment" },
 }, { prefix = "<leader>", mode = "v" })
 
 wk.register({
   C = {
     name = "+Comment",
-    y = { "<Plug>NERDCommenterYank", "Yank&comment"},
+    y = { "<Plug>NERDCommenterYank", "Yank&comment" },
   },
 }, { prefix = "<leader>" })
 
 wk.register({
   C = {
     name = "+Comment",
-    y = { "<Plug>NERDCommenterYank", "Yank&comment"},
+    y = { "<Plug>NERDCommenterYank", "Yank&comment" },
   },
 }, { prefix = "<leader>", mode = "v" })
 
@@ -128,34 +131,32 @@ wk.register({
 }, { prefix = "<leader>" })
 
 -- Git
--- :bufdo :e
 wk.register({
   g = {
     name = "+Git",
     g = { "<cmd>bufdo :e<CR>", "reload-files" },
     f = {
-        name = "+Find",
-        f = { "<cmd>Telescope git_files<CR>", "files" },
-        c = { "<cmd>Telescope git_commits<CR>", "commits" },
-        b = { "<cmd>Telescope git_branches<CR>", "branches" },
-        S = { "<cmd>Telescope git_stash<CR>", "stash" },
+      name = "+Find",
+      f = { "<cmd>Telescope git_files<CR>", "files" },
+      c = { "<cmd>Telescope git_commits<CR>", "commits" },
+      b = { "<cmd>Telescope git_branches<CR>", "branches" },
+      S = { "<cmd>Telescope git_stash<CR>", "stash" },
 
     },
     s = { "<cmd>Telescope git_status<CR>", "status" },
     n = { "<cmd>GitGutterNextHunk<CR>", "next-hunk" },
     p = { "<cmd>GitGutterPrevHunk<CR>", "previous-hunk" },
-    d = { "<cmd>Gdiffsplit<cr>", "diff" },
+    d = { "<cmd>Gvdiffsplit<cr>", "diff" },
   },
 }, { prefix = "<leader>" })
 
 -- Help
 wk.register({
-  h = { "<cmd>Help<CR>", "Help"},
+  h = { "<cmd>Help<CR>", "Help" },
 }, { prefix = "<leader>" })
 
 -- global local leader keys
 wk.register({
-    a = { "<cmd>SymbolsOutline<CR>", "Symbols"},
-    t = { "<cmd>TroubleToggle<CR>", "Trouble" },
+  a = { "<cmd>SymbolsOutline<CR>", "Symbols" },
+  t = { "<cmd>TroubleToggle<CR>", "Trouble" },
 }, { prefix = "<localleader>" })
-

@@ -1,8 +1,9 @@
 local packpath = '~/.local/share/nvim/site/pack/packer/opt/'
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+    install_path })
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -13,7 +14,7 @@ return require('packer').startup(function(use)
   use 'ellisonleao/gruvbox.nvim'
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { {'nvim-tree/nvim-web-devicons'} }
+    requires = { { 'nvim-tree/nvim-web-devicons' } }
   }
   -- workspaces
   use 'natecraddock/workspaces.nvim'
@@ -22,22 +23,23 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  -- file tree only for peer 
+  -- file tree only for peer
   use 'scrooloose/nerdtree'
   -- comments
   use 'preservim/nerdcommenter'
   -- git
   use 'airblade/vim-gitgutter'
   use 'tpope/vim-fugitive'
-  -- usefull 
+  -- usefull
   use 'tpope/vim-surround'
   use 'Yggdroot/indentLine'
   -- syntax
   use 'pearofducks/ansible-vim'
   use 'mfukar/robotframework-vim'
   use 'folke/neodev.nvim'
+  use 'mfussenegger/nvim-lint'
   -- LSP
   use 'folke/trouble.nvim'
   use 'neovim/nvim-lspconfig'

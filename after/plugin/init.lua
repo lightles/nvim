@@ -1,24 +1,25 @@
 require('nvim-web-devicons').setup()
 require('workspaces').setup({
-    hooks = {
-        open = { "Telescope find_files" },
-    }
+  hooks = {
+    open = { "Telescope find_files" },
+  }
 })
-local custom_gruvbox = require'lualine.themes.gruvbox'
+local custom_gruvbox = require 'lualine.themes.gruvbox'
 custom_gruvbox.insert.a.bg = '#ffaf00'
 require('lualine').setup {
-  options = { theme  = custom_gruvbox },
+  options = { theme = custom_gruvbox },
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = { 'mode' },
     lualine_c = {},
-    lualine_b = {'branch', 'diff', 'diagnostics', 'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'},
+    lualine_b = { 'branch', 'diff', 'diagnostics', 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' },
   },
 }
 require('trouble').setup()
 require('telescope').load_extension('workspaces')
+require("symbols-outline").setup()
 
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.robot set filetype=robot')
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.yaml set filetype=yaml.ansible')
@@ -43,8 +44,7 @@ function vmap(shortcut, command)
   map('v', shortcut, command)
 end
 
-
-vim.g.NERDTreeShowHidden=1
+vim.g.NERDTreeShowHidden = 1
 
 vim.api.nvim_command('command WQ wq')
 vim.api.nvim_command('command Wq wq')
