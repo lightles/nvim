@@ -24,7 +24,6 @@ require 'lspconfig'.robotframework_ls.setup {
   }
 }
 
-
 require('neodev').setup({})
 lspconfig.lua_ls.setup {
   capabilities = capabilities,

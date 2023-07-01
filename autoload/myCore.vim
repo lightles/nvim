@@ -15,7 +15,7 @@
 
 function! myCore#UpdatePlugins()
     source ~/.config/nvim/init.lua
-    execute 'PackerSync'
+    execute 'Lazy sync
     execute 'MasonUpdate'
 endfunction	
 

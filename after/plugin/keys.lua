@@ -11,7 +11,17 @@ nmap('<cr>', 'ciw')
 nmap('<C-_>', ':let@/=""<CR>')
 
 -- format
-nmap('=', ':lua vim.lsp.buf.format()<CR>')
+--nmap('<leader>=', ':lua vim.lsp.buf.format()<CR>')
+
+--wk.register({
+--["="] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" }, { prefix = "<leader>" } })
+wk.register({
+  ["<leader>"] = {
+    name = "Format",
+    ["="] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
+  },
+})
+
 -- Workspaces
 wk.register({
   e = {
@@ -121,6 +131,8 @@ wk.register({
 wk.register({
   q = {
     name = "+System",
+    m = { "<cmd>Mason<CR>", "mason" },
+    L = { "<cmd>Lazy<CR>", "Lazy-Loader" },
     q = { "<cmd>qall<CR>", "quit" },
     Q = { "<cmd>qall!<CR>", "force-quit" },
     w = { "<cmd>w<CR>", "write" },
