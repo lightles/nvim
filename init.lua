@@ -28,16 +28,28 @@ local plugins = {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', },
   },
-  -- file tree only for peer
-  'scrooloose/nerdtree',
+  -- file tree
+  'nvim-tree/nvim-tree.lua',
   -- comments
   'preservim/nerdcommenter',
   -- git
-  'airblade/vim-gitgutter',
+  'lewis6991/gitsigns.nvim',
   'tpope/vim-fugitive',
   -- usefull
   'tpope/vim-surround',
-  'Yggdroot/indentLine',
+  'lukas-reineke/indent-blankline.nvim',
+  -- movement
+  --{
+    --"ggandor/leap.nvim",
+    --config = function() require("leap").set_default_keymaps() end
+  --},
+  'matze/vim-move',
+  'MattesGroeger/vim-bookmarks',
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
   -- syntax
   --use 'pearofducks/ansible-vim'
   'mfukar/robotframework-vim',

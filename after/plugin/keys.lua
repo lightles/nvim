@@ -11,10 +11,6 @@ nmap('<cr>', 'ciw')
 nmap('<C-_>', ':let@/=""<CR>')
 
 -- format
---nmap('<leader>=', ':lua vim.lsp.buf.format()<CR>')
-
---wk.register({
---["="] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" }, { prefix = "<leader>" } })
 wk.register({
   ["<leader>"] = {
     name = "Format",
@@ -110,7 +106,6 @@ wk.register({
   T = {
     name = "+Toggle",
     i = { "<cmd>set paste!<CR>", "paste-mode" },
-    l = { "<cmd>call myCore#ToggleLineNumbers()<CR>", "line-numbers" },
     g = { "<cmd>GitGutterToggle<CR>", "git-gutter" },
     c = { "<cmd>set scrollbind<CR>", "scroll-bind" },
   },
@@ -120,7 +115,7 @@ wk.register({
 wk.register({
   f = {
     name = "+Files",
-    t = { "<cmd>NERDTreeToggle<CR>", "file-tree" },
+    t = { "<cmd>NvimTreeFindFileToggle<CR>", "file-tree" },
     f = { "<cmd>Telescope find_files<CR>", "find-files" },
     g = { "<cmd>Telescope git_files<CR>", "find-git-files" },
     --F = { "<cmd>call myCore#SshEdit()<CR>", "find-remote" },
@@ -156,8 +151,8 @@ wk.register({
 
     },
     s = { "<cmd>Telescope git_status<CR>", "status" },
-    n = { "<cmd>GitGutterNextHunk<CR>", "next-hunk" },
-    p = { "<cmd>GitGutterPrevHunk<CR>", "previous-hunk" },
+    n = { "<cmd>lua package.loaded.gitsigns.gs.next_hunk()<CR>", "next-hunk" },
+    p = { "<cmd>lua package.loaded.gitsigns.gs.prev_hunk()<CR>", "previous-hunk" },
     d = { "<cmd>Gvdiffsplit<cr>", "diff" },
   },
 }, { prefix = "<leader>" })

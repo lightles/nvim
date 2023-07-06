@@ -9,7 +9,7 @@ local lspconfig = require 'lspconfig'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'pyright', 'ansiblels', 'marksman', }
+local servers = { 'pyright', 'ansiblels', 'marksman', 'dockerls', 'docker_compose_language_service' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
