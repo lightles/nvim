@@ -2,6 +2,8 @@ function ansible_yaml_ftswap()
   if vim.bo.filetype == 'yaml.ansible' then
     vim.bo.filetype = 'yaml'
   elseif vim.bo.filetype == 'yaml' then
+    vim.bo.filetype = 'dockerfile'
+  elseif vim.bo.filetype == 'dockerfile' then
     vim.bo.filetype = 'yaml.ansible'
   end
 end
