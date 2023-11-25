@@ -8,7 +8,7 @@ end
 
 function ansible_yaml_keywordprg()
   local word = vim.fn.expand("<cWORD>"):gsub(":", ""):gsub("#", "")
-  vim.api.nvim_command(':tabnew | set filetype=yaml.ansible | r !ansible-doc ' .. word)
+  vim.api.nvim_command(':tabnew | set filetype=yaml | r !ansible-doc ' .. word)
   vim.api.nvim_command('normal gg')
   vim.api.nvim_command('set nomodifiable')
   vim.keymap.set("n", "q", ":set modifiable | bd!<cr>", { silent = true, buffer = vim.fn.bufnr() })

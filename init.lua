@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   -- THEME
   'ellisonleao/gruvbox.nvim',
+  'karoliskoncevicius/oldbook-vim',
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -23,7 +24,6 @@ local plugins = {
   -- keybinds interface
   'folke/which-key.nvim',
   -- Telescope
-  --'nvim-lua/plenary.nvim',
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', },
