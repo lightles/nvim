@@ -25,7 +25,6 @@ require('gitsigns').setup()
 
 
 vim.cmd [[highlight IndentBlanklineIndent guifg=#3a3a3a gui=nocombine]]
-require("ibl").setup()
 
 vim.cmd [[highlight BookmarkSign ctermbg=NONE guifg=#00afd7]]
 vim.g.bookmark_sign = ''
