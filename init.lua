@@ -73,5 +73,6 @@ local plugins = {
   'williamboman/mason-lspconfig.nvim',
   -- better fFtT so i can use my ; and ,
   'rhysd/clever-f.vim',
+  'lepture/vim-jinja',
 }
 require("lazy").setup(plugins, opts)
