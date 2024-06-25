@@ -29,7 +29,8 @@ local plugins = {
     dependencies = { 'nvim-lua/plenary.nvim', },
   },
   -- file tree
-  'nvim-tree/nvim-tree.lua',
+  'prichrd/netrw.nvim',
+  -- 'nvim-tree/nvim-tree.lua',
   -- comments
   'preservim/nerdcommenter',
   -- git

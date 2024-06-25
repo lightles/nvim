@@ -20,7 +20,8 @@ require('lualine').setup {
 require('trouble').setup()
 require('telescope').load_extension('workspaces')
 require('symbols-outline').setup()
-require('nvim-tree').setup()
+-- require('nvim-tree').setup()
+require'netrw'.setup()
 require('gitsigns').setup()
 
 
